@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="userForm" (ngSubmit)="submit(userForm.value)" class="row g-3">
+                <div formArrayName="numbers" class="col-auto">
+                    <div *ngFor="let number of userForm.controls.numbers.controls; let i = index">
+                        <input formControlName="{{i}}" type="tel" class="form-control">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button type="button" (click)="addNumber()" class="btn btn-info mb-3">Add another phone
+                        number</button>
+                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
